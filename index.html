@@ -1,1 +1,269 @@
-https://sohailfack787-droid.github.io/arifkhan-logo-studio/](https://sohailfack787-droid.github.io/arifkhan-logo-studio/)
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عارف لوگو سٹوڈیو | Arif Logo Studio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .corner-profile {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 12px;
+      border-radius: 999px;
+      z-index: 20;
+      cursor: pointer;
+    }
+    .corner-profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #38bdf8;
+    }
+    .corner-profile span {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 640px;
+      margin: 64px auto 30px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+    h1 {
+      font-size: 26px;
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+    input[type="text"], select, input[type="color"] {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid #475569;
+      background: #0f172a;
+      color: #fff;
+      font-size: 15px;
+    }
+    input[type="color"] {
+      height: 44px;
+      padding: 4px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .preview-box {
+      margin: 22px 0;
+      background: #020617;
+      border: 1px dashed #475569;
+      border-radius: 16px;
+      padding: 28px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 220px;
+    }
+    .logo-card {
+      width: 190px;
+      height: 190px;
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 14px;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+    .logo-title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+    .logo-tag {
+      font-size: 12px;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    button {
+      flex: 1;
+      min-width: 150px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #0284c7;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #334155;
+      color: #fff;
+    }
+    .status {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 13px;
+      color: #4ade80;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-profile" onclick="document.getElementById('avatarInput').click()" title="پروفائل تصویر تبدیل کریں">
+    <img id="avatarImg" src="https://ui-avatars.com/api/?name=Arif+Khan&background=0284c7&color=fff" alt="Profile" />
+    <span>عارف خان</span>
+    <input type="file" id="avatarInput" accept="image/*" style="display:none" />
+  </div>
+
+  <div class="container">
+    <h1>عارف لوگو سٹوڈیو</h1>
+    <p class="subtitle">اپنا نام یا برانڈ لکھیں اور منٹوں میں اسٹائلش لوگو تیار کریں</p>
+
+    <div class="form-group">
+      <label for="brandName">لوگو کا نام / برانڈ</label>
+      <input type="text" id="brandName" placeholder="مثال: Arif Khan Marble Supplier" value="Arif Khan" />
+    </div>
+
+    <div class="form-group">
+      <label for="tagline">ٹیگ لائن (اختیاری)</label>
+      <input type="text" id="tagline" placeholder="مثال: Logo Studio" value="Logo Studio" />
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="bgColor">پس منظر کا رنگ</label>
+        <input type="color" id="bgColor" value="#0284c7" />
+      </div>
+      <div class="form-group">
+        <label for="textColor">تحریر کا رنگ</label>
+        <input type="color" id="textColor" value="#ffffff" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="shapeStyle">لوگو کی شکل</label>
+      <select id="shapeStyle">
+        <option value="28px">گول کنارے (Rounded)</option>
+        <option value="50%">دائرہ (Circle)</option>
+        <option value="8px">چوکور (Sharp)</option>
+      </select>
+    </div>
+
+    <div class="preview-box">
+      <div id="logoCard" class="logo-card">
+        <div id="logoTitle" class="logo-title">Arif Khan</div>
+        <div id="logoTag" class="logo-tag">Logo Studio</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="copyShareLink()">شیئر ایبل لنک کاپی کریں</button>
+      <button class="btn-secondary" onclick="resetStudio()">ری سیٹ کریں</button>
+    </div>
+
+    <div id="statusMsg" class="status"></div>
+  </div>
+
+  <script>
+    const brandName = document.getElementById("brandName");
+    const tagline = document.getElementById("tagline");
+    const bgColor = document.getElementById("bgColor");
+    const textColor = document.getElementById("textColor");
+    const shapeStyle = document.getElementById("shapeStyle");
+    const logoCard = document.getElementById("logoCard");
+    const logoTitle = document.getElementById("logoTitle");
+    const logoTag = document.getElementById("logoTag");
+    const statusMsg = document.getElementById("statusMsg");
+    const avatarInput = document.getElementById("avatarInput");
+    const avatarImg = document.getElementById("avatarImg");
+
+    function updateLogo() {
+      logoTitle.textContent = brandName.value.trim() || "Arif Logo";
+      logoTag.textContent = tagline.value.trim();
+      logoCard.style.background = bgColor.value;
+      logoCard.style.color = textColor.value;
+      logoCard.style.borderRadius = shapeStyle.value;
+    }
+
+    [brandName, tagline, bgColor, textColor, shapeStyle].forEach(el => {
+      el.addEventListener("input", updateLogo);
+      el.addEventListener("change", updateLogo);
+    });
+
+    avatarInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        avatarImg.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function copyShareLink() {
+      const shareUrl = window.location.href;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        statusMsg.textContent = "لنک کاپی ہو گیا: " + shareUrl;
+      }).catch(() => {
+        statusMsg.textContent = "لنک: " + shareUrl;
+      });
+    }
+
+    function resetStudio() {
+      brandName.value = "Arif Khan";
+      tagline.value = "Logo Studio";
+      bgColor.value = "#0284c7";
+      textColor.value = "#ffffff";
+      shapeStyle.value = "28px";
+      updateLogo();
+      statusMsg.textContent = "سیٹنگز ری سیٹ ہو گئیں۔";
+    }
+
+    updateLogo();
+  </script>
+</body>
+</html>
