@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>عارف لوگو سٹوڈیو | Arif Logo Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Nastaliq+Urdu:wght@500;700&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #f8fafc;
       min-height: 100vh;
       padding: 18px;
+      font-family: 'Plus Jakarta Sans', 'Noto Nastaliq Urdu', system-ui, sans-serif;
     }
     .top-bar {
       max-width: 660px;
@@ -53,12 +57,14 @@
       text-align: center;
       color: #38bdf8;
       margin-bottom: 6px;
+      line-height: 1.5;
     }
     .subtitle {
       text-align: center;
       color: #cbd5e1;
       font-size: 14px;
       margin-bottom: 22px;
+      line-height: 1.7;
     }
     .form-group {
       margin-bottom: 14px;
@@ -77,6 +83,7 @@
       background: #0f172a;
       color: #fff;
       font-size: 15px;
+      font-family: 'Plus Jakarta Sans', 'Noto Nastaliq Urdu', system-ui, sans-serif;
     }
     input[type="color"] {
       height: 44px;
@@ -96,11 +103,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 240px;
+      min-height: 245px;
     }
     .logo-frame {
-      width: 210px;
-      height: 210px;
+      width: 215px;
+      height: 215px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -112,31 +119,41 @@
       position: relative;
     }
 
-    /* اسٹائل 1: گول کنارے (Rounded) */
+    /* لوگو اسٹائلز */
     .style-rounded {
       border-radius: 28px;
       border: 3px solid rgba(255, 255, 255, 0.22);
     }
-
-    /* اسٹائل 2: بیج (Badge) */
     .style-badge {
       border-radius: 50%;
       border: 6px double rgba(255, 255, 255, 0.75);
       outline: 3px solid rgba(255, 255, 255, 0.2);
     }
-
-    /* اسٹائل 3: شیلڈ (Shield) */
     .style-shield {
       clip-path: polygon(50% 0%, 92% 14%, 85% 62%, 50% 100%, 15% 62%, 8% 14%);
       border-radius: 0;
       padding-bottom: 28px;
     }
-
-    /* اسٹائل 4: مونوگرام (Monogram) */
     .style-monogram {
       border-radius: 14px;
       border: 2px solid rgba(255, 255, 255, 0.55);
       box-shadow: inset 0 0 0 5px rgba(15, 23, 42, 0.25), 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    /* فونٹ اسٹائلز */
+    .font-modern {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .font-display {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      letter-spacing: 1.5px;
+    }
+    .font-nastaliq {
+      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+      line-height: 1.9 !important;
     }
 
     .mono-letters {
@@ -157,13 +174,14 @@
     .logo-title {
       font-size: 22px;
       font-weight: 800;
-      line-height: 1.25;
+      line-height: 1.3;
       word-break: break-word;
     }
     .logo-tag {
       font-size: 12px;
       margin-top: 6px;
-      opacity: 0.9;
+      opacity: 0.92;
+      line-height: 1.4;
     }
 
     .actions {
@@ -180,6 +198,7 @@
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
+      font-family: 'Plus Jakarta Sans', 'Noto Nastaliq Urdu', system-ui, sans-serif;
     }
     .btn-primary {
       background: #0284c7;
@@ -209,7 +228,7 @@
 
   <div class="container">
     <h1>عارف لوگو سٹوڈیو</h1>
-    <p class="subtitle">بیج، شیلڈ یا مونوگرام منتخب کریں اور اپنا برانڈ لوگو تیار کریں</p>
+    <p class="subtitle">لوگو اسٹائل اور فونٹ منتخب کریں اور اپنا برانڈ لوگو تیار کریں</p>
 
     <div class="form-group">
       <label for="brandName">لوگو کا نام / برانڈ</label>
@@ -221,14 +240,26 @@
       <input type="text" id="tagline" placeholder="مثال: Logo Studio" value="Logo Studio" />
     </div>
 
-    <div class="form-group">
-      <label for="logoStyle">لوگو اسٹائل</label>
-      <select id="logoStyle">
-        <option value="style-badge">بیج (Badge)</option>
-        <option value="style-shield">شیلڈ (Shield)</option>
-        <option value="style-monogram">مونوگرام (Monogram)</option>
-        <option value="style-rounded">گول کارڈ (Rounded)</option>
-      </select>
+    <div class="row">
+      <div class="form-group">
+        <label for="logoStyle">لوگو اسٹائل</label>
+        <select id="logoStyle">
+          <option value="style-badge">بیج (Badge)</option>
+          <option value="style-shield">شیلڈ (Shield)</option>
+          <option value="style-monogram">مونوگرام (Monogram)</option>
+          <option value="style-rounded">گول کارڈ (Rounded)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fontStyle">فونٹ (Font)</label>
+        <select id="fontStyle">
+          <option value="font-modern">ماڈرن سانس (Modern)</option>
+          <option value="font-serif">کلاسک سیرف (Classic Serif)</option>
+          <option value="font-display">بولڈ ڈسپلے (Bold Display)</option>
+          <option value="font-nastaliq">اردو نستعلیق (Urdu Nastaliq)</option>
+        </select>
+      </div>
     </div>
 
     <div class="row">
@@ -243,7 +274,7 @@
     </div>
 
     <div class="preview-box">
-      <div id="logoFrame" class="logo-frame style-badge">
+      <div id="logoFrame" class="logo-frame style-badge font-modern">
         <div id="monoLetters" class="mono-letters">AK</div>
         <div id="logoTitle" class="logo-title">Arif Khan</div>
         <div id="logoTag" class="logo-tag">Logo Studio</div>
@@ -262,6 +293,7 @@
     const brandName = document.getElementById("brandName");
     const tagline = document.getElementById("tagline");
     const logoStyle = document.getElementById("logoStyle");
+    const fontStyle = document.getElementById("fontStyle");
     const bgColor = document.getElementById("bgColor");
     const textColor = document.getElementById("textColor");
     const logoFrame = document.getElementById("logoFrame");
@@ -285,12 +317,12 @@
       monoLetters.textContent = getMonogram(nameVal);
       logoTag.textContent = tagline.value.trim();
 
-      logoFrame.className = "logo-frame " + logoStyle.value;
+      logoFrame.className = "logo-frame " + logoStyle.value + " " + fontStyle.value;
       logoFrame.style.background = bgColor.value;
       logoFrame.style.color = textColor.value;
     }
 
-    [brandName, tagline, logoStyle, bgColor, textColor].forEach(el => {
+    [brandName, tagline, logoStyle, fontStyle, bgColor, textColor].forEach(el => {
       el.addEventListener("input", updateLogo);
       el.addEventListener("change", updateLogo);
     });
@@ -318,6 +350,7 @@
       brandName.value = "Arif Khan";
       tagline.value = "Logo Studio";
       logoStyle.value = "style-badge";
+      fontStyle.value = "font-modern";
       bgColor.value = "#0284c7";
       textColor.value = "#ffffff";
       updateLogo();
