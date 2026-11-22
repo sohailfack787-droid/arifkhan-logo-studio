@@ -10,37 +10,39 @@
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #f8fafc;
       min-height: 100vh;
-      padding: 20px;
+      padding: 18px;
+    }
+    .top-bar {
+      max-width: 660px;
+      margin: 0 auto 14px;
+      display: flex;
+      justify-content: flex-start;
     }
     .corner-profile {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 6px 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 6px 14px;
       border-radius: 999px;
-      z-index: 20;
       cursor: pointer;
     }
     .corner-profile img {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #38bdf8;
     }
     .corner-profile span {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
     }
     .container {
-      max-width: 640px;
-      margin: 64px auto 30px;
-      background: rgba(30, 41, 59, 0.9);
+      max-width: 660px;
+      margin: 0 auto 30px;
+      background: rgba(30, 41, 59, 0.92);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
       padding: 24px;
@@ -94,23 +96,66 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 220px;
+      min-height: 240px;
     }
-    .logo-card {
-      width: 190px;
-      height: 190px;
-      border-radius: 28px;
+    .logo-frame {
+      width: 210px;
+      height: 210px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 14px;
+      padding: 18px;
       transition: all 0.25s ease;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      position: relative;
     }
+
+    /* اسٹائل 1: گول کنارے (Rounded) */
+    .style-rounded {
+      border-radius: 28px;
+      border: 3px solid rgba(255, 255, 255, 0.22);
+    }
+
+    /* اسٹائل 2: بیج (Badge) */
+    .style-badge {
+      border-radius: 50%;
+      border: 6px double rgba(255, 255, 255, 0.75);
+      outline: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* اسٹائل 3: شیلڈ (Shield) */
+    .style-shield {
+      clip-path: polygon(50% 0%, 92% 14%, 85% 62%, 50% 100%, 15% 62%, 8% 14%);
+      border-radius: 0;
+      padding-bottom: 28px;
+    }
+
+    /* اسٹائل 4: مونوگرام (Monogram) */
+    .style-monogram {
+      border-radius: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      box-shadow: inset 0 0 0 5px rgba(15, 23, 42, 0.25), 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .mono-letters {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+      display: none;
+    }
+    .style-monogram .mono-letters {
+      display: block;
+    }
+    .style-monogram .logo-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
     .logo-title {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       line-height: 1.25;
       word-break: break-word;
@@ -120,6 +165,7 @@
       margin-top: 6px;
       opacity: 0.9;
     }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -153,24 +199,36 @@
   </style>
 </head>
 <body>
-  <div class="corner-profile" onclick="document.getElementById('avatarInput').click()" title="پروفائل تصویر تبدیل کریں">
-    <img id="avatarImg" src="https://ui-avatars.com/api/?name=Arif+Khan&background=0284c7&color=fff" alt="Profile" />
-    <span>عارف خان</span>
-    <input type="file" id="avatarInput" accept="image/*" style="display:none" />
+  <div class="top-bar">
+    <div class="corner-profile" onclick="document.getElementById('avatarInput').click()" title="پروفائل تصویر تبدیل کریں">
+      <img id="avatarImg" src="https://ui-avatars.com/api/?name=Arif+Khan&background=0284c7&color=fff" alt="Profile" />
+      <span>عارف خان</span>
+      <input type="file" id="avatarInput" accept="image/*" style="display:none" />
+    </div>
   </div>
 
   <div class="container">
     <h1>عارف لوگو سٹوڈیو</h1>
-    <p class="subtitle">اپنا نام یا برانڈ لکھیں اور منٹوں میں اسٹائلش لوگو تیار کریں</p>
+    <p class="subtitle">بیج، شیلڈ یا مونوگرام منتخب کریں اور اپنا برانڈ لوگو تیار کریں</p>
 
     <div class="form-group">
       <label for="brandName">لوگو کا نام / برانڈ</label>
-      <input type="text" id="brandName" placeholder="مثال: Arif Khan Marble Supplier" value="Arif Khan" />
+      <input type="text" id="brandName" placeholder="مثال: Arif Khan" value="Arif Khan" />
     </div>
 
     <div class="form-group">
       <label for="tagline">ٹیگ لائن (اختیاری)</label>
       <input type="text" id="tagline" placeholder="مثال: Logo Studio" value="Logo Studio" />
+    </div>
+
+    <div class="form-group">
+      <label for="logoStyle">لوگو اسٹائل</label>
+      <select id="logoStyle">
+        <option value="style-badge">بیج (Badge)</option>
+        <option value="style-shield">شیلڈ (Shield)</option>
+        <option value="style-monogram">مونوگرام (Monogram)</option>
+        <option value="style-rounded">گول کارڈ (Rounded)</option>
+      </select>
     </div>
 
     <div class="row">
@@ -184,17 +242,9 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="shapeStyle">لوگو کی شکل</label>
-      <select id="shapeStyle">
-        <option value="28px">گول کنارے (Rounded)</option>
-        <option value="50%">دائرہ (Circle)</option>
-        <option value="8px">چوکور (Sharp)</option>
-      </select>
-    </div>
-
     <div class="preview-box">
-      <div id="logoCard" class="logo-card">
+      <div id="logoFrame" class="logo-frame style-badge">
+        <div id="monoLetters" class="mono-letters">AK</div>
         <div id="logoTitle" class="logo-title">Arif Khan</div>
         <div id="logoTag" class="logo-tag">Logo Studio</div>
       </div>
@@ -211,25 +261,36 @@
   <script>
     const brandName = document.getElementById("brandName");
     const tagline = document.getElementById("tagline");
+    const logoStyle = document.getElementById("logoStyle");
     const bgColor = document.getElementById("bgColor");
     const textColor = document.getElementById("textColor");
-    const shapeStyle = document.getElementById("shapeStyle");
-    const logoCard = document.getElementById("logoCard");
+    const logoFrame = document.getElementById("logoFrame");
+    const monoLetters = document.getElementById("monoLetters");
     const logoTitle = document.getElementById("logoTitle");
     const logoTag = document.getElementById("logoTag");
     const statusMsg = document.getElementById("statusMsg");
     const avatarInput = document.getElementById("avatarInput");
     const avatarImg = document.getElementById("avatarImg");
 
-    function updateLogo() {
-      logoTitle.textContent = brandName.value.trim() || "Arif Logo";
-      logoTag.textContent = tagline.value.trim();
-      logoCard.style.background = bgColor.value;
-      logoCard.style.color = textColor.value;
-      logoCard.style.borderRadius = shapeStyle.value;
+    function getMonogram(text) {
+      const words = text.trim().split(/\s+/).filter(Boolean);
+      if (words.length === 0) return "AK";
+      if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+      return (words[0][0] + words[1][0]).toUpperCase();
     }
 
-    [brandName, tagline, bgColor, textColor, shapeStyle].forEach(el => {
+    function updateLogo() {
+      const nameVal = brandName.value.trim() || "Arif Khan";
+      logoTitle.textContent = nameVal;
+      monoLetters.textContent = getMonogram(nameVal);
+      logoTag.textContent = tagline.value.trim();
+
+      logoFrame.className = "logo-frame " + logoStyle.value;
+      logoFrame.style.background = bgColor.value;
+      logoFrame.style.color = textColor.value;
+    }
+
+    [brandName, tagline, logoStyle, bgColor, textColor].forEach(el => {
       el.addEventListener("input", updateLogo);
       el.addEventListener("change", updateLogo);
     });
@@ -256,9 +317,9 @@
     function resetStudio() {
       brandName.value = "Arif Khan";
       tagline.value = "Logo Studio";
+      logoStyle.value = "style-badge";
       bgColor.value = "#0284c7";
       textColor.value = "#ffffff";
-      shapeStyle.value = "28px";
       updateLogo();
       statusMsg.textContent = "سیٹنگز ری سیٹ ہو گئیں۔";
     }
